@@ -1,0 +1,12 @@
+HOME 
+	categorias = Hardwares  				 		Consoles  		  Perifericos 	     Keys		Computadores / Notebooks   						Jogos			Carrinho
+	               Kits					  	 	 Playstation 		    Mouse	      Windows 10         PC Gamer           					                 Playstation
+		       Placa-Mãe - {AM5 AM4 LGA1150 1151 LGA1200 LGA1700}	 Xbox			    Teclado	      Windows 11	 Notebooks - marca {Lenovo Asus Acer Dell Sony HP alienware}		 Xbox
+	               Placa de video				  	         Nintendo		    Mousepad													 Nintendo
+		       Memorias - {DRR5 - DDRR4}		  	 	 Controles		    Monitor
+		       Processadores - {Intel - AMD}		  			    		    Headsets
+		       Armazenamento - {SSDs - HDs - NVMe}				    		    WebCans
+	 	       Fontes								    		    Impressoras
+		       Refrigeração							    		    Cadeiras Gamer
+		       Gabinetes
+		       Cabos e adaptadores
