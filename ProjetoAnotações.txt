@@ -1,0 +1,68 @@
+banco de dodos, tabelas:
+ - Clientes/login
+	- nome
+	- cpf
+	- email
+	- telefone
+	- data nascimento
+	- senha?
+	- endereço*
+ - Endereço/entrega
+	- cep
+	- logradouro
+	- numero
+	- complemento
+	- bairro
+	- cidade
+	- uf
+ - Review do produto
+	- nome_usuario*
+	- produto*
+	- review
+	- data
+	- nota
+ - Itens vendidos/estoque
+	- venda*
+	- produto*
+	- quantidade
+ - Pagamentos
+	- venda*
+	- valor
+ - Produto
+	- nome
+	- descrição
+	- caracteristicas/informações tecnicas
+	- preço
+	- marca
+	- tipo produto 
+	- categorias hardware
+	- consoles
+	- perifericos
+	- keys
+	- computadores
+	- jogos 
+	- foto1
+	- foto2
+	- foto3
+ - Venda
+	- cliente
+	- data da venda
+
+Publico alvo:
+ - 16 a 24 anos
+ - publico masculino
+ - Renda classe C e B
+ 
+Refs: 
+ - Steam
+ - Kabum
+ - Pichau
+ - Nuuvem
+
+Recursos refs:
+ - Cor predominante azul
+ - Carrossel passando novidades populares e ofertas como comunicação primaria
+ - Menu da loja na parte superior horizontal, que se expande verticalmente
+ - Sistema de busca no cabeçalho ou no menu da loja
+ - Ambiente com fundo mais escuro
+ - Carrinho e lista de desejos
