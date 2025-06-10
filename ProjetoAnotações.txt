@@ -1,5 +1,6 @@
 banco de dodos, tabelas:
  - Clientes/login
+	- id clientes
 	- nome
 	- cpf
 	- email
@@ -8,6 +9,7 @@ banco de dodos, tabelas:
 	- senha?
 	- endereço*
  - Endereço/entrega
+	- id endereço
 	- cep
 	- logradouro
 	- numero
@@ -16,19 +18,23 @@ banco de dodos, tabelas:
 	- cidade
 	- uf
  - Review do produto
+	- id review
 	- nome_usuario*
 	- produto*
 	- review
 	- data
 	- nota
  - Itens vendidos/estoque
+	- id itens
 	- venda*
 	- produto*
 	- quantidade
  - Pagamentos
+	- id pagamentos
 	- venda*
 	- valor
  - Produto
+	- id produto
 	- nome
 	- descrição
 	- caracteristicas/informações tecnicas
@@ -45,8 +51,12 @@ banco de dodos, tabelas:
 	- foto2
 	- foto3
  - Venda
+	- id venda
 	- cliente
 	- data da venda
+
+
+
 
 Publico alvo:
  - 16 a 24 anos
