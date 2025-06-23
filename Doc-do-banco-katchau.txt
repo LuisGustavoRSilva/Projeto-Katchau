@@ -1,0 +1,127 @@
+# 📚 Documentação do Banco de Dados — Katchau MySQL
+
+## 📌 Descrição Geral
+O banco de dados **Katchau** gerencia informações de clientes, endereços, produtos, estoque, vendas, pagamentos, itens vendidos e avaliações (reviews) de produtos. É estruturado para atender a operações de um sistema de e-commerce ou loja virtual.
+
+---
+
+## 🗂️ Estrutura do Banco de Dados
+
+### 1️⃣ Clientes
+Armazena os dados dos clientes.
+
+| Campo | Tipo | Descrição |
+|---|---|---|
+| `id_cliente` | INT (PK) | Identificador único do cliente |
+| `nome` | VARCHAR(100) | Nome completo |
+| `cpf` | VARCHAR(14) | CPF do cliente (único) |
+| `email` | VARCHAR(100) | E-mail do cliente (único) |
+| `telefone` | VARCHAR(20) | Telefone de contato |
+| `data_nascimento` | DATE | Data de nascimento |
+| `senha_hash` | VARCHAR(255) | Hash da senha |
+
+### 2️⃣ Endereços
+Registra os endereços de entrega dos clientes.
+
+| Campo | Tipo | Descrição |
+|---|---|---|
+| `id_endereco` | INT (PK) | Identificador do endereço |
+| `id_cliente` | INT (FK) | Referência ao cliente |
+| `cep` | VARCHAR(10) | Código postal |
+| `logradouro` | VARCHAR(100) | Rua/Avenida |
+| `numero` | VARCHAR(10) | Número do local |
+| `complemento` | VARCHAR(100) | Complemento |
+| `bairro` | VARCHAR(50) | Bairro |
+| `cidade` | VARCHAR(50) | Cidade |
+| `uf` | CHAR(2) | Unidade federativa (estado) |
+
+### 3️⃣ Produtos
+Armazena os produtos disponíveis para venda.
+
+| Campo | Tipo | Descrição |
+|---|---|---|
+| `id_produto` | INT (PK) | Identificador do produto |
+| `nome` | VARCHAR(100) | Nome do produto |
+| `descricao` | TEXT | Descrição detalhada |
+| `preco` | DECIMAL(10,2) | Preço de venda |
+| `tipo_produto` | VARCHAR(50) | Tipo do produto (ex: periférico, jogo, console) |
+| `marca` | VARCHAR(50) | Marca do produto |
+
+### 4️⃣ Estoque
+Controla a quantidade de produtos em estoque.
+
+| Campo | Tipo | Descrição |
+|---|---|---|
+| `id_estoque` | INT (PK) | Identificador do controle de estoque |
+| `id_produto` | INT (FK) | Produto vinculado |
+| `data` | DATE | Data de atualização do estoque |
+| `quantidade` | INT | Quantidade disponível |
+| `marca` | VARCHAR(50) | Marca do produto |
+
+### 5️⃣ Vendas
+Registra cada venda realizada.
+
+| Campo | Tipo | Descrição |
+|---|---|---|
+| `id_venda` | INT (PK) | Identificador da venda |
+| `id_cliente` | INT (FK) | Cliente que realizou a compra |
+| `data_venda` | DATE | Data da venda |
+
+### 6️⃣ Itens_Venda
+Detalha os produtos incluídos em cada venda.
+
+| Campo | Tipo | Descrição |
+|---|---|---|
+| `id_item_venda` | INT (PK) | Identificador do item vendido |
+| `id_venda` | INT (FK) | Venda relacionada |
+| `id_produto` | INT (FK) | Produto vendido |
+| `quantidade` | INT | Quantidade vendida |
+
+### 7️⃣ Pagamentos
+Armazena informações de pagamento de cada venda.
+
+| Campo | Tipo | Descrição |
+|---|---|---|
+| `id_pagamento` | INT (PK) | Identificador do pagamento |
+| `id_venda` | INT (FK) | Venda paga |
+| `valor` | DECIMAL(10,2) | Valor pago |
+
+### 8️⃣ Reviews
+Registra avaliações de produtos feitas pelos clientes.
+
+| Campo | Tipo | Descrição |
+|---|---|---|
+| `id_review` | INT (PK) | Identificador da avaliação |
+| `id_cliente` | INT (FK) | Cliente que fez a avaliação |
+| `id_produto` | INT (FK) | Produto avaliado |
+| `review` | TEXT | Texto da avaliação |
+| `data` | DATE | Data da avaliação |
+| `nota` | INT | Nota atribuída |
+
+## 🔗 Relacionamentos Principais
+- **Clientes** → **Endereços** (1:N)
+- **Clientes** → **Vendas** (1:N)
+- **Clientes** → **Reviews** (1:N)
+- **Produtos** → **Estoque** (1:N)
+- **Produtos** → **Itens_Venda** (1:N)
+- **Produtos** → **Reviews** (1:N)
+- **Vendas** → **Itens_Venda** (1:N)
+- **Vendas** → **Pagamentos** (1:1)
+
+## 🗒️ Observações
+✅ Cada tabela possui chave primária (PK) e as relações são bem definidas com chaves estrangeiras (FK).  
+✅ As tabelas `Clientes` possuem índices únicos em `cpf` e `email`.  
+✅ É recomendável proteger os dados sensíveis, como `senha_hash`, com boas práticas de segurança.
+
+## ⚙️ Script de Criação
+Execute o script **katchau.sql** incluído neste repositório para criar todas as tabelas e índices automaticamente no MySQL.
+
+```bash
+mysql -u SEU_USUARIO -p < katchau.sql
+```
+
+## 🗂️ Diagrama Entidade-Relacionamento
+Para referência visual, consulte o arquivo **katchau-img.png** incluído neste projeto.
+
+## 📢 Contato
+Em caso de dúvidas ou sugestões, entre em contato com o desenvolvedor do projeto.
