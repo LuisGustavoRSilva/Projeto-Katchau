@@ -1,0 +1,598 @@
+/* style.css */
+
+
+/* FAZER RESPOSIVIDADE */
+@media (min-width: 0px){
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #252636;
+    color: #ccc;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #252636;
+    color: #ccc;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #252636;
+    color: #ccc;
+  }
+
+  .logo img{
+    height: 60%;
+  }
+
+  header {
+    background: #141424;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0rem;
+    box-shadow: 3px 3px 6px #00000060;
+  }
+
+  .usuario_e_carinho img{
+    height: 55%;
+    
+  }
+  .usuario_e_carinho{
+    margin-top: 0.5%;
+  }
+
+  .carrinho{
+    filter: drop-shadow(5px 5px 5px rgba(34, 34, 34, 0.5));
+  }
+
+  .usuario{
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+  }
+
+  .pesquisa {
+    display: none;
+  }
+  
+  header input {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: none;
+  }
+  
+  nav {
+    margin-top: 30px;
+    justify-content: center;
+    display: flex;
+    margin-bottom: 30px;
+  }
+  
+  nav ul {
+    display: none;
+  }
+  
+  nav li{
+    cursor: pointer;
+    color: #ccc;
+    font-weight: bold;
+  }
+
+  nav li:hover{
+    color: white;
+  }
+
+  nav ul {
+    right: 0;
+    height: 49px;
+    background-color: #141424;
+    padding: 1.5rem;
+    box-shadow: 3px 3px 6px #00000060;
+  }
+  
+  .banner {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+  }
+  
+  .banner img {
+    border-radius: 40px;
+    width: 90%;
+    height: 90%;
+    max-width: 1000px;
+    
+  }
+
+  .bannerimg{
+    box-shadow: 3px 3px 8px #00000060;
+  }
+
+  .bannerimg:hover{
+    box-shadow: 0px 0px 25px #8f8f8f60;
+  }
+
+  .seta-esquerda{
+    display: none;
+}
+
+.seta-direita{   
+display: none;
+}
+  
+  main {
+    padding: 1rem 2rem;
+  }
+  
+  h2 {
+    font-size: 22pt;
+    margin: 1rem 0 0.6rem;
+  }
+
+  .btn-mais{
+    display: block;
+    width: fit-content;
+    padding: 0.6rem 1.2rem;
+    background-color: #141424;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 3px 3px 3px #13131360;
+    margin-bottom: 13pt;
+    margin-right: 5.5%;
+  }
+
+  
+
+  .btn-mais:hover{
+    color: #000;
+    background-color: #fff;
+    box-shadow: 0px 0px 20px #acacac60;
+  }
+
+  .apresentacao{
+    margin-left: 6%;
+    margin-bottom: 1%;
+    font-size: 14pt;
+  }
+  
+  .grid {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 0 1rem;
+    padding-bottom: 1.5%;
+  }
+  
+  .card {
+    background: #202022;
+    padding: 1rem;
+    border-radius: 12px;
+    width: 250px;
+    height: 460px;
+    text-align: center;
+    box-shadow: 5px 5px 5px #00000060;
+    cursor: pointer;
+  }
+
+  .container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+  .card:hover{
+    transform: scale(1.03);
+}
+  
+  .card img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .games {
+    background: #202022;
+    padding: 1rem;
+    border-radius: 12px;
+    width: 250px;
+    height: 270px;
+    text-align: center;
+    box-shadow: 5px 5px 5px #00000060;
+    cursor: pointer;
+  }
+  .games:hover{
+  transform: scale(1.03);
+}
+  
+  .games img {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  .produto{
+    padding-top: 10pt;
+    padding-bottom: 6pt;
+    font-size: 14pt
+  }
+
+  .preco{
+    color: #ff7700;
+    font-size: 20pt;
+    
+  }
+
+  .parcelamento {
+    color: #ff7700;
+    font-size: 11pt;
+  }
+  
+  .btn-topo {
+    display: block;
+    width: fit-content;
+    margin: 2rem auto;
+    padding: 0.6rem 1.2rem;
+    background-color: #ff7700;
+    color: #000;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .btn-topo:hover{
+    color: #000;
+    background-color: #fff;
+    box-shadow: 0px 0px 20px #acacac60;
+  }
+  
+  footer {
+    background: #141424;
+    padding: 2rem;
+    color: #ccc;
+  }
+  
+  .footer-content {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .logo_footer {
+    margin-left: 1.5%;
+  }
+
+  h4{
+    margin-bottom: 7pt;
+  }
+  
+  .copy {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .contato{
+    margin-left: 22%;
+    margin-bottom: 0.5%;
+  }
+
+  .contato img{
+    margin-right: 4pt;
+    cursor: pointer;
+  }
+
+  .contato2{
+    margin-bottom: 9pt;
+  }
+  .info{
+    margin-left: 23%;
+  }
+
+  .info p{
+    cursor: pointer;
+  }
+
+  a{
+    color: #ccc;
+    text-decoration: none;
+  }
+
+  .linha{
+    width: 0%;
+  }
+
+}
+
+/* _________________________________________________________________ */
+
+  @media (min-width: 576px){
+
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0rem;
+  }
+
+  .usuario_e_carinho img{
+    width: 40px;
+    height: 40px;
+    
+  }
+  .usuario_e_carinho{
+    margin-top: 0.6%;
+  }
+
+  .carrinho{
+    margin-left: 7.5px;
+  }
+
+  .carrinho{
+    filter: drop-shadow(5px 5px 5px rgba(34, 34, 34, 0.5));
+  }
+
+  .carrinho:hover{
+    filter: drop-shadow(0px 0px 10px rgba(201, 201, 201, 0.5));
+  }
+
+  .usuario{
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+  }
+
+  .usuario:hover{
+    filter: drop-shadow(0px 0px 10px rgba(201, 201, 201, 0.5));
+  }
+
+  .pesquisa {
+    display: flex;
+    padding: 0.75rem;
+    width: 250px;
+    height: 40px;
+    margin-left: 810px;
+    margin-top: 0.5%;
+    margin-right: 7.5px;
+  }
+  
+  header input {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: none;
+  }
+  
+  nav {
+    margin-top: 30px;
+    justify-content: center;
+    display: flex;
+    margin-bottom: 30px;
+  }
+  
+  nav ul {
+    width: 700px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13pt;
+  }
+
+  nav ul {
+    right: 0;
+    height: 49px;
+    padding: 1.5rem;
+    box-shadow: 3px 3px 6px #00000060;
+  }
+  
+  .banner {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+  }
+  
+  .banner img {
+    border-radius: 40px;
+    width: 90%;
+    max-width: 1000px;
+    cursor: pointer;
+    
+  }
+
+  .bannerimg{
+    box-shadow: 3px 3px 8px #00000060;
+  }
+
+  .seta-esquerda{
+    width: 15px;
+    height: 40px;
+    margin-top: 260px;
+    margin-right: 20px;
+    position: relative;
+    transition: ease 0.5s;
+    cursor: pointer;
+    display: block;
+}
+
+.seta-direita{   
+    width: 15px;
+    height: 40px;
+    margin-top: 260px;
+    margin-left: 20px;
+    position: relative;
+    transition: ease 0.5s;
+    cursor: pointer;
+    display: block;
+}
+
+.logo img{
+  width: 100%;
+  height: 100%;
+}
+  
+  main {
+    padding: 1rem 2rem;
+  }
+  
+  h2 {
+    font-size: 22pt;
+    margin: 1rem 0 0.6rem;
+    margin-left: 6%;
+    
+  }
+
+  .btn-mais{
+    display: block;
+    width: fit-content;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 3px 3px 3px #13131360;
+    margin-bottom: 13pt;
+    margin-right: 5.5%;
+  }
+
+  .btn_p{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .apresentacao{
+    margin-left: 6%;
+    margin-bottom: 1%;
+    font-size: 14pt;
+  }
+  
+  .grid {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 0 1rem;
+    padding-bottom: 1.5%;
+  }
+  
+  .card {
+    padding: 1rem;
+    border-radius: 12px;
+    width: 250px;
+    height: 460px;
+    text-align: center;
+    box-shadow: 5px 5px 5px #00000060;
+    cursor: pointer;
+  }
+
+  .container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+  .card img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .games {
+    padding: 1rem;
+    border-radius: 12px;
+    width: 250px;
+    height: 270px;
+    text-align: center;
+    box-shadow: 5px 5px 5px #00000060;
+    cursor: pointer;
+  }
+
+  .games img {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  .produto{
+    padding-top: 10pt;
+    padding-bottom: 6pt;
+    font-size: 14pt
+  }
+
+  .preco{
+    font-size: 20pt;
+    
+  }
+
+  .parcelamento {
+    font-size: 11pt;
+  }
+  
+  .btn-topo {
+    display: block;
+    width: fit-content;
+    margin: 2rem auto;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  footer {
+    padding: 2rem;
+  }
+  
+  .footer-content {
+    display: flex;
+  }
+
+  .logo_footer {
+    margin-left: 1.5%;
+  }
+
+  h4{
+    margin-bottom: 7pt;
+  }
+  
+  .copy {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .contato{
+    margin-left: 22%;
+    margin-bottom: 0.5%;
+  }
+
+  .contato img{
+    margin-right: 4pt;
+    cursor: pointer;
+  }
+
+  .contato2{
+    margin-bottom: 9pt;
+  }
+  .info{
+    margin-left: 23%;
+  }
+
+  .info p{
+    cursor: pointer;
+  }
+
+  a{
+    text-decoration: none;
+  }
+
+  .linha{
+    justify-content: center;
+    width: 80%;
+  }
+
+  nav label {
+    display: none;
+  }
+}
