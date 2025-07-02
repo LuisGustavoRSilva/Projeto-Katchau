@@ -404,6 +404,10 @@ display: none;
     
   }
 
+  .menu_h{
+    display: none;
+  }
+
   .bannerimg{
     box-shadow: 3px 3px 8px #00000060;
   }
@@ -589,7 +593,7 @@ display: none;
 
   .linha{
     justify-content: center;
-    width: 80%;
+    width: 100%;
   }
 
   nav label {
