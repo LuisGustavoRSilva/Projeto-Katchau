@@ -519,11 +519,7 @@ display: none;
     border-radius: 8px;
   }
 
-  .produto{
-    padding-top: 10pt;
-    padding-bottom: 6pt;
-    font-size: 14pt
-  }
+
 
   .preco{
     font-size: 20pt;
@@ -599,4 +595,64 @@ display: none;
   nav label {
     display: none;
   }
+
+  #produto img{
+    display: grid;
+    border-radius: 10%;
+    box-shadow: 3px 3px 3px #13131360;
+    margin-top: 1%;
+    margin-left:6%;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+  }
+  .produto_compra{
+    font-size: 20pt;
+  }
+  .preco_compra{
+    font-size: 20pt;
+    color: #ff7700;
+    margin-top: 2%;
+  }
+  .parcelamento_compra{
+    color: #ff7700;
+    font-size: 12pt;
+  }
+
+  .btn-adicionar-carrinho{
+    display: block;
+    width: fit-content;
+    padding: 0.6rem 1.2rem;
+    background-color: #ff7700;
+    color: #141424;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 3px 3px 3px #13131360;
+    margin-bottom: 13pt;
+    margin-right: 5.5%;
+    margin-top: 2%;
+  }
+
+  .produto{
+    padding-top: 10pt;
+    padding-bottom: 6pt;
+    font-size: 14pt
+  }
+
+  .nome_preco{
+    margin-top: 1%;
+    margin-left: 2%;
+  }
+
+  .descricao_produto{
+    font-size: 13pt;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  
+
 }
