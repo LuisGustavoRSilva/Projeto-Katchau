@@ -7,7 +7,7 @@
   <title>Katchau</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body onload="carregar_novidades()">
 
   <header id="inicio">
     <div class="container">
@@ -36,270 +36,68 @@
   </nav>
 
   <section class="banner">
-    <div class="seta-esquerda" onclick="rolarbannerDireita()"><img src="img/seta-esquerda.png"></div>
+    <div class="seta-esquerda" onclick="voltar()"><img src="img/seta-esquerda.png"></div>
 
-    <img src="img/banner.png" alt="Banner promocional" class="bannerimg">
+    <div class="carrossel" id="carrossel">
+      <img src="img/banner.png" alt="">
+      <img src="img/banner3.jpg" alt="">
+      <img src="img/banner4.jpg" alt="">
+      <img src="img/banner6.jpg" alt="">
+      <img src="img/banner7.jpg" alt="">
+    </div>
 
-    <div class="seta-direita" onclick="rolarbannerEsquerda()"><img src="img/seta-direita.png">
+    <div class="seta-direita" onclick="avancar()"><img src="img/seta-direita.png">
 </div>
+
+<script>
+  const carrossel = document.getElementById('carrossel');
+  const larguraSlide = 1000; // largura de cada banner
+  const totalSlides = carrossel.children.length;
+
+  function avancar() {
+    const maxScroll = larguraSlide * (totalSlides - 1);
+    const scrollAtual = carrossel.scrollLeft;
+
+    if (scrollAtual >= maxScroll) {
+      // Volta pro início
+      carrossel.scrollTo({ left: 0, behavior: 'smooth' });
+    } else {
+      // Avança um slide
+      carrossel.scrollBy({ left: larguraSlide, behavior: 'smooth' });
+    }
+  }
+  function voltar() {
+    const scrollAtual = carrossel.scrollLeft;
+
+    if (scrollAtual <= 0) {
+      // Vai pro final
+      carrossel.scrollTo({ left: larguraSlide * (totalSlides - 1), behavior: 'smooth' });
+    } else {
+      // Volta um slide
+      carrossel.scrollBy({ left: -larguraSlide, behavior: 'smooth' });
+    }
+  }
+</script>
   </section>
 
   <main>
-    <section>
-      <!-- ------------------------------------------------------------ -->
-      <div class="titulo">
-      <h2>Itens mais vendidos:</h2></div>
-      <div class="btn_p">
-        <p class="apresentacao">Confira nossos produtos mais vendidos do mês de agosto.</p>
-      <a href="mais_vendidos.html" class="btn-mais">Ver mais</a>
-      </div>
     
-      <div class="grid">
-
-
-        <a href="produto.html"><div class="card">
-          <img src="https://img.kalunga.com.br/fotosdeprodutos/220292z.jpg?_gl=1*oe4saa*_gcl_aw*R0NMLjE3NTE1NjM5NzMuQ2owS0NRancxSmpEQmhEakFSSXNBQmxNMlN1WHVpcFlHMHhOTEdETDJ6RFVyTWxibEFkWk1mbEVLNjJlUU1veVNHUkdpOFpiaG1nOTRqNGFBZ3UxRUFMd193Y0I.*_gcl_au*MjU3NzE0NjUuMTc1MTU2Mzk3Mg.." alt="">
-          <p class="produto"><strong>EPSON EcoTank L1250 - Impressora, tanque de Tinta Colorida, Wi-Fi Direct, Comando de voz, Bivolt, Cor: Preto</strong></p>
-          <p class="preco"><strong>R$ 199,99</strong></p>
-          <p class="parcelamento">Em até 9x de R$ 26,14 sem juros no cartão</p>
-        </div></a>
-
-        <div class="card">
-          <img src="https://images3.kabum.com.br/produtos/fotos/sync_mirakl/519143/large/Iphone-15-Apple-128GB-Quadriband-6-1-Polegadas-Preto-Mtp03br-a_1748375085.jpg" alt="Headset Redragon">
-          <p class="produto"><strong>Headset Gamer Redragon Zeus Lite, P3, Preto.</strong></p>
-          <p class="preco"><strong>R$ 199,99</strong></p>
-          <p class="parcelamento">Em até 9x de R$ 26,14 sem juros no cartão</p>
-        </div>
-
-        <div class="card">
-          <img src="https://images9.kabum.com.br/produtos/fotos/542929/console-playstation-5-slim-edicao-digital-branco-2-jogos-1000038914_1713450978_g.jpg" alt="Headset Redragon">
-          <p class="produto"><strong>Headset Gamer Redragon Zeus Lite, P3, Preto.</strong></p>
-          <p class="preco"><strong>R$ 199,99</strong></p>
-          <p class="parcelamento">Em até 9x de R$ 26,14 sem juros no cartão</p>
-        </div>
-
-
-        <div class="card">
-          <img src="https://images8.kabum.com.br/produtos/fotos/227818/headset-gamer-redragon-zeus-chroma-mk-ii-rgb-surround-7-1-usb-drivers-53mm-preto-vermelho-h510-rgb_1631555309_g.jpg" alt="Headset Redragon">
-          <p class="produto"><strong>Headset Gamer Redragon Zeus Lite, P3, Preto.</strong></p>
-          <p class="preco"><strong>R$ 199,99</strong></p>
-          <p class="parcelamento">Em até 9x de R$ 26,14 sem juros no cartão</p>
-        </div>
-
-
-        <div class="card">
-          <img src="https://images8.kabum.com.br/produtos/fotos/320908/gabinete-gamer-rise-mode-galaxy-glass-lateral-em-vidro-temperado-preto-rm-ga-gg-fb_1657738212_g.jpg" alt="Headset Redragon">
-          <p class="produto"><strong>Headset Gamer Redragon Zeus Lite, P3, Preto.</strong></p>
-          <p class="preco"><strong>R$ 199,99</strong></p>
-          <p class="parcelamento">Em até 9x de R$ 26,14 sem juros no cartão</p>
-        </div>
+    <section id="novidades">
+      <h2>Novidades</h2>
+      <div class="btn_p"><p class="txtnovidades">Confira nossos últimos lançamentos. Listas com os 10 últimos livros</p>
+      <a href="produto.html" class="btn-mais">Ver mais</a></div>
+      <div id="produtosnovidades" class="grid">
 
       </div>
-    </section>
 
-    <!-- ------------------------------------------------------------ -->
-    <section>
-      <h2>Hardware:</h2>
-      <div class="btn_p">
-      <p class="apresentacao">Confira nossos harwares pra você montar seu PC potente.</p>
-      <a href="hardware.html" class="btn-mais">Ver mais</a>
+
+  <section id="maisvendidos">
+      <h2>Mais Vendidos</h2>
+      <p class="txtmaisvendidos">Confira a lista dos livros mais vendidos.</p>
+      <a href="mais_vendidos.html" class="btn-mais">Ver mais</a>
+      <div id="produtosmaisvendidos">
+              
       </div>
-      <div class="grid">
-
-
-        <div class="card">
-          <img src="https://images3.kabum.com.br/produtos/fotos/sync_mirakl/519143/large/Iphone-15-Apple-128GB-Quadriband-6-1-Polegadas-Preto-Mtp03br-a_1748375085.jpg" alt="">
-          <p class="produto"><strong>Comprar Dune: Awakening</strong></p>
-          <p class="preco"><strong>R$ 199,99</strong></p>
-          <p class="parcelamento">Em até 9x de R$ 26,14 sem juros no cartão</p>
-        </div>
-
-
-        <div class="card">
-          <img src="https://images9.kabum.com.br/produtos/fotos/542929/console-playstation-5-slim-edicao-digital-branco-2-jogos-1000038914_1713450978_g.jpg" alt="Headset Redragon">
-          <p class="produto"><strong>Headset Gamer Redragon Zeus Lite, P3, Preto.</strong></p>
-          <p class="preco"><strong>R$ 199,99</strong></p>
-          <p class="parcelamento">Em até 9x de R$ 26,14 sem juros no cartão</p>
-        </div>
-
-
-        <div class="card">
-          <img src="https://images8.kabum.com.br/produtos/fotos/320908/gabinete-gamer-rise-mode-galaxy-glass-lateral-em-vidro-temperado-preto-rm-ga-gg-fb_1657738212_g.jpg" alt="Headset Redragon">
-          <p class="produto"><strong>Headset Gamer Redragon Zeus Lite, P3, Preto.</strong></p>
-          <p class="preco"><strong>R$ 199,99</strong></p>
-          <p class="parcelamento">Em até 9x de R$ 26,14 sem juros no cartão</p>
-        </div>
-
-
-        <div class="card">
-          <img src="https://images8.kabum.com.br/produtos/fotos/227818/headset-gamer-redragon-zeus-chroma-mk-ii-rgb-surround-7-1-usb-drivers-53mm-preto-vermelho-h510-rgb_1631555309_g.jpg" alt="Headset Redragon">
-          <p class="produto"><strong>Headset Gamer Redragon Zeus Lite, P3, Preto.</strong></p>
-          <p class="preco"><strong>R$ 199,99</strong></p>
-          <p class="parcelamento">Em até 9x de R$ 26,14 sem juros no cartão</p>
-        </div>
-
-
-        <div class="card">
-          <img src="https://images2.kabum.com.br/produtos/fotos/155932/multifuncional-epson-ecotank-monocromatica-simplex-compatibilidade-com-epson-connect-solutions-m2120_1620139476_g.jpg" alt="Headset Redragon">
-          <p class="produto"><strong>Headset Gamer Redragon Zeus Lite, P3, Preto.</strong></p>
-          <p class="preco"><strong>R$ 199,99</strong></p>
-          <p class="parcelamento">Em até 9x de R$ 26,14 sem juros no cartão</p>
-        </div>
-
-
-      </div>
-    </section>
-
-    <section>
-      <!-- ------------------------------------------------------------ -->
-      <h2>Jogos:</h2>
-      <div class="btn_p">
-      <p class="apresentacao">Confira nossos jogos pra você ficar madrugadas zerando.</p>
-        <a href="jogos.html" class="btn-mais">Ver mais</a>
-        </div>
-      <div class="grid">
-        <!-- Cards de produtos -->
-
-        <div class="games">
-          <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1172710/e934cbd04b40a615b3306797bd7be76610904f0e/header.jpg?t=1750677744" alt="Headset Redragon">
-          <p class="produto"><strong>Comprar Dune: Awakening</strong></p>
-          <p class="preco"><strong>R$ 199,99</strong></p>
-          <p class="parcelamento">Em até 9x de R$ 26,14 sem juros no cartão</p>
-        </div>
-
-
-        <div class="games">
-          <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1172710/e934cbd04b40a615b3306797bd7be76610904f0e/header.jpg?t=1750677744" alt="">
-          <p class="produto"><strong>Comprar Dune: Awakening</strong></p>
-          <p class="preco"><strong>R$ 199,99</strong></p>
-          <p class="parcelamento">Em até 9x de R$ 26,14 sem juros no cartão</p>
-        </div>
-
-
-        <div class="games">
-          <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1172710/e934cbd04b40a615b3306797bd7be76610904f0e/header.jpg?t=1750677744" alt="Headset Redragon">
-          <p class="produto"><strong>Comprar Dune: Awakening</strong></p>
-          <p class="preco"><strong>R$ 199,99</strong></p>
-          <p class="parcelamento">Em até 9x de R$ 26,14 sem juros no cartão</p>
-        </div>
-
-
-        <div class="games">
-          <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1172710/e934cbd04b40a615b3306797bd7be76610904f0e/header.jpg?t=1750677744" alt="Headset Redragon">
-          <p class="produto"><strong>Comprar Dune: Awakening</strong></p>
-          <p class="preco"><strong>R$ 199,99</strong></p>
-          <p class="parcelamento">Em até 9x de R$ 26,14 sem juros no cartão</p>
-        </div>
-
-
-        <div class="games">
-          <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1172710/e934cbd04b40a615b3306797bd7be76610904f0e/header.jpg?t=1750677744" alt="Headset Redragon">
-          <p class="produto"><strong>Comprar Dune: Awakening</strong></p>
-          <p class="preco"><strong>R$ 199,99</strong></p>
-          <p class="parcelamento">Em até 9x de R$ 26,14 sem juros no cartão</p>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <!-- ------------------------------------------------------------ -->
-      <h2>Periféricos:</h2>
-      <div class="btn_p">
-      <p class="apresentacao">Confira nossos periféricos pra ficar no maior conforto.</p>
-        <a href="perifericos.html" class="btn-mais">Ver mais</a>
-        </div>
-      <div class="grid">
-        <!-- Cards de produtos -->
-        <div class="card">
-          <img src="https://images9.kabum.com.br/produtos/fotos/542929/console-playstation-5-slim-edicao-digital-branco-2-jogos-1000038914_1713450978_g.jpg" alt="">
-          <p class="produto"><strong>Comprar Dune: Awakening</strong></p>
-          <p class="preco"><strong>R$ 199,99</strong></p>
-          <p class="parcelamento">Em até 9x de R$ 26,14 sem juros no cartão</p>
-        </div>
-
-
-        <div class="card">
-          <img src="https://images3.kabum.com.br/produtos/fotos/sync_mirakl/519143/large/Iphone-15-Apple-128GB-Quadriband-6-1-Polegadas-Preto-Mtp03br-a_1748375085.jpg" alt="Headset Redragon">
-          <p class="produto"><strong>Headset Gamer Redragon Zeus Lite, P3, Preto.</strong></p>
-          <p class="preco"><strong>R$ 199,99</strong></p>
-          <p class="parcelamento">Em até 9x de R$ 26,14 sem juros no cartão</p>
-        </div>
-
-        <div class="card">
-          <img src="https://images2.kabum.com.br/produtos/fotos/155932/multifuncional-epson-ecotank-monocromatica-simplex-compatibilidade-com-epson-connect-solutions-m2120_1620139476_g.jpg" alt="Headset Redragon">
-          <p class="produto"><strong>Headset Gamer Redragon Zeus Lite, P3, Preto.</strong></p>
-          <p class="preco"><strong>R$ 199,99</strong></p>
-          <p class="parcelamento">Em até 9x de R$ 26,14 sem juros no cartão</p>
-        </div>
-
-
-        <div class="card">
-          <img src="https://images8.kabum.com.br/produtos/fotos/227818/headset-gamer-redragon-zeus-chroma-mk-ii-rgb-surround-7-1-usb-drivers-53mm-preto-vermelho-h510-rgb_1631555309_g.jpg" alt="Headset Redragon">
-          <p class="produto"><strong>Headset Gamer Redragon Zeus Lite, P3, Preto.</strong></p>
-          <p class="preco"><strong>R$ 199,99</strong></p>
-          <p class="parcelamento">Em até 9x de R$ 26,14 sem juros no cartão</p>
-        </div>
-
-
-        <div class="card">
-          <img src="https://images8.kabum.com.br/produtos/fotos/320908/gabinete-gamer-rise-mode-galaxy-glass-lateral-em-vidro-temperado-preto-rm-ga-gg-fb_1657738212_g.jpg" alt="Headset Redragon">
-          <p class="produto"><strong>Headset Gamer Redragon Zeus Lite, P3, Preto.</strong></p>
-          <p class="preco"><strong>R$ 199,99</strong></p>
-          <p class="parcelamento">Em até 9x de R$ 26,14 sem juros no cartão</p>
-        </div>
-      </div>
-    </section>
-
-
-
-    <section>
-      <!-- ------------------------------------------------------------ -->
-      <h2>Computadores:</h2>
-      <div class="btn_p">
-      <p class="apresentacao">Confira nossos computadores montados pro que você mais precisa.</p>
-          <a href="computadores.html" class="btn-mais">Ver mais</a>
-          </div>
-      <div class="grid">
-        <!-- Cards de produtos -->
-        <div class="card">
-          <img src="https://images8.kabum.com.br/produtos/fotos/227818/headset-gamer-redragon-zeus-chroma-mk-ii-rgb-surround-7-1-usb-drivers-53mm-preto-vermelho-h510-rgb_1631555309_g.jpg" alt="">
-          <p class="produto"><strong>Comprar Dune: Awakening</strong></p>
-          <p class="preco"><strong>R$ 199,99</strong></p>
-          <p class="parcelamento">Em até 9x de R$ 26,14 sem juros no cartão</p>
-        </div>
-
-
-        <div class="card">
-          <img src="https://images2.kabum.com.br/produtos/fotos/155932/multifuncional-epson-ecotank-monocromatica-simplex-compatibilidade-com-epson-connect-solutions-m2120_1620139476_g.jpg" alt="Headset Redragon">
-          <p class="produto"><strong>Headset Gamer Redragon Zeus Lite, P3, Preto.</strong></p>
-          <p class="preco"><strong>R$ 199,99</strong></p>
-          <p class="parcelamento">Em até 9x de R$ 26,14 sem juros no cartão</p>
-        </div>
-
-        <div class="card">
-          <img src="https://images9.kabum.com.br/produtos/fotos/542929/console-playstation-5-slim-edicao-digital-branco-2-jogos-1000038914_1713450978_g.jpg" alt="Headset Redragon">
-          <p class="produto"><strong>Headset Gamer Redragon Zeus Lite, P3, Preto.</strong></p>
-          <p class="preco"><strong>R$ 199,99</strong></p>
-          <p class="parcelamento">Em até 9x de R$ 26,14 sem juros no cartão</p>
-        </div>
-
-
-        <div class="card">
-          <img src="https://images8.kabum.com.br/produtos/fotos/320908/gabinete-gamer-rise-mode-galaxy-glass-lateral-em-vidro-temperado-preto-rm-ga-gg-fb_1657738212_g.jpg" alt="Headset Redragon">
-          <p class="produto"><strong>Headset Gamer Redragon Zeus Lite, P3, Preto.</strong></p>
-          <p class="preco"><strong>R$ 199,99</strong></p>
-          <p class="parcelamento">Em até 9x de R$ 26,14 sem juros no cartão</p>
-        </div>
-
-
-        <div class="card">
-          <img src="https://images3.kabum.com.br/produtos/fotos/sync_mirakl/519143/large/Iphone-15-Apple-128GB-Quadriband-6-1-Polegadas-Preto-Mtp03br-a_1748375085.jpg" alt="Headset Redragon">
-          <p class="produto"><strong>Headset Gamer Redragon Zeus Lite, P3, Preto.</strong></p>
-          <p class="preco"><strong>R$ 199,99</strong></p>
-          <p class="parcelamento">Em até 9x de R$ 26,14 sem juros no cartão</p>
-        </div>
-      </div>
-    </section>
 
     <a href="#inicio" class="btn-topo">Voltar ao topo</a>
   </main>
@@ -328,5 +126,7 @@
     <p class="copy">Katchau © 2025 | Desenvolvido por Carlos, Eder, Luis e Samuel | Projeto SENAC</p>
   </footer>
 
+
+  <script src="js/script.js"></script>
 </body>
 </html>
