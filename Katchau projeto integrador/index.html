@@ -51,31 +51,43 @@
 
 <script>
   const carrossel = document.getElementById('carrossel');
-  const larguraSlide = 1000; // largura de cada banner
+  const larguraSlide = 1000; // pode ser window.innerWidth se quiser tela cheia
   const totalSlides = carrossel.children.length;
 
+  let bloqueado = false;
+
   function avancar() {
+    if (bloqueado) return;
+    bloquearTemporariamente();
+
     const maxScroll = larguraSlide * (totalSlides - 1);
     const scrollAtual = carrossel.scrollLeft;
 
     if (scrollAtual >= maxScroll) {
-      // Volta pro início
       carrossel.scrollTo({ left: 0, behavior: 'smooth' });
     } else {
-      // Avança um slide
       carrossel.scrollBy({ left: larguraSlide, behavior: 'smooth' });
     }
   }
+
   function voltar() {
+    if (bloqueado) return;
+    bloquearTemporariamente();
+
     const scrollAtual = carrossel.scrollLeft;
 
     if (scrollAtual <= 0) {
-      // Vai pro final
       carrossel.scrollTo({ left: larguraSlide * (totalSlides - 1), behavior: 'smooth' });
     } else {
-      // Volta um slide
       carrossel.scrollBy({ left: -larguraSlide, behavior: 'smooth' });
     }
+  }
+
+  function bloquearTemporariamente() {
+    bloqueado = true;
+    setTimeout(() => {
+      bloqueado = false;
+    }, 1000); // 1 segundo de bloqueio
   }
 </script>
   </section>
@@ -84,7 +96,7 @@
     
     <section id="novidades">
       <h2>Novidades</h2>
-      <div class="btn_p"><p class="txtnovidades">Confira nossos últimos lançamentos. Listas com os 10 últimos livros</p>
+      <div class="btn_p"><p class="txtnovidades">Confira nossos últimos lançamentos. Listas com os 10 últimos produtos.</p>
       <a href="produto.html" class="btn-mais">Ver mais</a></div>
       <div id="produtosnovidades" class="grid">
 

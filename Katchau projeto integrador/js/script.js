@@ -9,15 +9,19 @@ function carregar_novidades(){
     .then((dados)=>{
         dados.map((liv)=>{
             saida+= ` <div class="grid"><div class="card">
+            <div class="topo-card">
                 <img src=" ${liv.foto1} " alt="Capa ${liv.nome}">
                 <strong><p class="produto">${liv.nome}</p></strong>
+            </div>
+                <div class="rodape-card">
                 <p class="preco">R$ ${liv.preco}</p>
                 <a class ="btn-topo">
                     <nav>
                     <strong><p>Adicionar ao carrinho</p></strong></nav>
                 </a>
+                </div>
             </div> 
-            </div>` 
+            </div>`
         })
         produtos_novidades.innerHTML = saida;
     })

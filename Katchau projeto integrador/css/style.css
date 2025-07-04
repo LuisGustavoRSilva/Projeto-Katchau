@@ -670,4 +670,8 @@ display: none;
     display: flex;
 }
 
+.topo-card{
+  height: 350px;
+}
+
 }
