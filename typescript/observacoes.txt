@@ -1,0 +1,41 @@
+Projeto a livraria
+    - objetos:
+        - venda
+        - produto
+        - cliente
+        - funcionario
+        - itemvendido
+        - pagamento
+        - endereco
+    - desmembrar objetos:
+        - pessoa:
+            + id, nome, cpf, email, telefone, endereco
+            - cliente herda pessoa:
+                + aniversario
+            - funcionario herda pessoa:
+                + cargo, salario
+            - autor herda pessoa:
+                + genero_literario
+        
+        - endereco será associado à classe pessoa:        
+            + tipo_logradouro, logradouro, numero, cep, bairro
+        
+        - produto:
+            + id, nome, descricao, preco
+
+        - venda:
+            + id, cliente, funcionario, data_hora
+        
+        - itemvendido:
+            + id, venda, produto, quantidade
+
+        - pagamento:
+            + id, venda, total_pagar
+
+    - Requisitos funcionais:
+        - O que podemos fazer com os objetos:
+            - Cadastrar
+            - Atualizar
+            - Pesquisar
+            - Listar
+            - Apagar     
