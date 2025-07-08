@@ -209,4 +209,4 @@ CREATE TABLE pagamentos (
 
 Abaixo, o diagrama entidade-relacionamento que representa o modelo lógico do banco de dados:
 
-<img src="katchau-diag.png">
+<img src=katchau-diag.png>
