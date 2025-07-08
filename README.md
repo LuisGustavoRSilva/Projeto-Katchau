@@ -208,5 +208,5 @@ CREATE TABLE pagamentos (
 ## 🗺️ Diagrama ER (Entidade-Relacionamento)
 
 Abaixo, o diagrama entidade-relacionamento que representa o modelo lógico do banco de dados:
-
+```
 ![diagrama banco de dados](katchau-diag.png)
