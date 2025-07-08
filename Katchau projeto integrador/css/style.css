@@ -95,20 +95,7 @@
     padding: 1.5rem;
     box-shadow: 3px 3px 6px #00000060;
   }
-  
-  .banner {
-    display: flex;
-    justify-content: center;
-    margin: 1rem 0;
-  }
-  
-  .banner img {
-    border-radius: 40px;
-    width: 90%;
-    height: 90%;
-    max-width: 1000px;
-    
-  }
+
 
   .bannerimg{
     box-shadow: 3px 3px 8px #00000060;
@@ -136,7 +123,7 @@ display: none;
   }
 
   .btn-mais{
-    display: flex;
+    display: block;
     width: fit-content;
     padding: 0.6rem 1.2rem;
     background-color: #141424;
@@ -176,8 +163,8 @@ display: none;
     background: #202022;
     padding: 1rem;
     border-radius: 12px;
-    width: 260px;
-    height: 530px;
+    width: 250px;
+    height: 460px;
     text-align: center;
     box-shadow: 5px 5px 5px #00000060;
     cursor: pointer;
@@ -220,7 +207,7 @@ display: none;
   .produto{
     padding-top: 10pt;
     padding-bottom: 6pt;
-    font-size: 12pt
+    font-size: 14pt
   }
 
   .preco{
@@ -412,27 +399,6 @@ display: none;
     box-shadow: 3px 3px 8px #00000060;
   }
 
-  .seta-esquerda{
-    width: 15px;
-    height: 40px;
-    margin-top: 260px;
-    margin-right: 20px;
-    position: relative;
-    transition: ease 0.5s;
-    cursor: pointer;
-    display: block;
-}
-
-.seta-direita{   
-    width: 15px;
-    height: 40px;
-    margin-top: 260px;
-    margin-left: 20px;
-    position: relative;
-    transition: ease 0.5s;
-    cursor: pointer;
-    display: block;
-}
 
 .logo img{
   width: 100%;
@@ -445,7 +411,7 @@ display: none;
   
   h2 {
     font-size: 22pt;
-    margin: 0.5rem 0 0.6rem;
+    margin: 1rem 0 0.6rem;
     margin-left: 6%;
     
   }
@@ -478,20 +444,19 @@ display: none;
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
-    gap: 0rem;
-    padding: 0 0.75rem;
+    gap: 1.5rem;
+    padding: 0 1rem;
     padding-bottom: 1.5%;
   }
   
   .card {
-    padding: 1rem 0.5;
+    padding: 1rem;
     border-radius: 12px;
     width: 250px;
     height: 460px;
     text-align: center;
     box-shadow: 5px 5px 5px #00000060;
     cursor: pointer;
-    margin-bottom: 5px;
   }
 
   .container {
@@ -499,12 +464,6 @@ display: none;
     display: flex;
     justify-content: space-between;
 }
-
-.txtnovidades{
-  margin-left: 6%;
-}
-
-
 
   .card img {
     width: 100%;
@@ -526,11 +485,7 @@ display: none;
     border-radius: 8px;
   }
 
-  .produto{
-    padding-top: 10pt;
-    padding-bottom: 6pt;
-    font-size: 13pt
-  }
+
 
   .preco{
     font-size: 20pt;
@@ -607,21 +562,60 @@ display: none;
     display: none;
   }
 
-  .card nav{
-    margin: 0px 0px;
+  #produto img{
+    display: grid;
+    border-radius: 10%;
+    box-shadow: 3px 3px 3px #13131360;
+    margin-top: 1%;
+    margin-left:6%;
+    justify-content: space-between;
+    align-items: center;
+    width: 35%;
+    height: 35%;
+  }
+  .produto_compra{
+    font-size: 20pt;
+  }
+  .preco_compra{
+    font-size: 20pt;
+    color: #ff7700;
+    margin-top: 2%;
+  }
+  .parcelamento_compra{
+    color: #ff7700;
+    font-size: 12pt;
   }
 
-  .card nav p{
-    font-size: 10pt;
+  .btn-adicionar-carrinho{
+    display: block;
+    width: fit-content;
+    padding: 0.6rem 1.2rem;
+    background-color: #ff7700;
     color: #141424;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 3px 3px 3px #13131360;
+    margin-bottom: 13pt;
+    margin-right: 5.5%;
+    margin-top: 2%;
   }
 
-  .card a{
-    margin-top: 5px;
-    margin-bottom: 0px;
+  .produto{
+    padding-top: 10pt;
+    padding-bottom: 6pt;
+    font-size: 14pt
   }
 
-  
+  .nome_preco{
+    margin-top: 1%;
+    margin-left: 2%;
+  }
+
+  .descricao_produto{
+    font-size: 13pt;
+  }
+
   html {
     scroll-behavior: smooth;
   }
@@ -631,22 +625,20 @@ display: none;
     width: 100%;
     max-width: 1000px; /* largura do seu banner */
     overflow: hidden; /* esconde o que passa dos lados */
-    
   }
   
   .carrossel {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    width: 500%; /* 3 banners */
+    width: 300%; /* 3 banners */
   }
   
   .carrossel img {
     width: 100%;
     flex-shrink: 0;
     object-fit: cover;
-    
-  }
 
+  }
   
   .seta-esquerda{
     width: 15px;
@@ -668,10 +660,6 @@ display: none;
     transition: ease 0.5s;
     cursor: pointer;
     display: flex;
-}
-
-.topo-card{
-  height: 350px;
 }
 
 }
